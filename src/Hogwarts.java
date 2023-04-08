@@ -1,4 +1,4 @@
-public class Hogwarts {
+public abstract class Hogwarts {
     private String fullName;
     private int powerMagic;
     private int distanceMagic;
@@ -27,5 +27,22 @@ public class Hogwarts {
 
     public void setDistanceMagic(int distanceMagic) {
         this.distanceMagic = distanceMagic;
+    }
+
+    private int getTotalPower() {
+        return powerMagic + distanceMagic;
+    }
+    public void compareTo (Hogwarts student) {
+        if (student.getTotalPower() < this.getTotalPower()) {
+            System.out.println("Сильнее " + this.fullName);
+        } else if (student.getTotalPower() > this.getTotalPower()) {
+            System.out.println("Сильнее " + student.fullName);
+        } else {
+            System.out.println("Ученики ранвны по силе");
+        }
+    }
+    @Override
+    public String toString() {
+        return "Студент " + fullName + " сила магии: " + powerMagic + " трансгрессия: " + distanceMagic;
     }
 }

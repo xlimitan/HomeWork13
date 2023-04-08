@@ -20,5 +20,11 @@ public class Main {
                 new Slytherin("Graham Montague", 40, 35, 50, 45, 35, 60, 45),
                 new Slytherin("Gregory Goyle", 30, 30, 45, 50, 40, 20, 30)
         };
+
+        studentGryffindor[0].compareTo(studentHufflepuff[0]);
+        studentGryffindor[0].innerCompareTo(studentGryffindor[1]);
+        System.out.println(studentGryffindor[1].toString());
+        System.out.println(studentSlytherin[1].toString());
     }
+    
 }
