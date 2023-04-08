@@ -33,4 +33,20 @@ public class Hufflepuff extends Hogwarts {
     public void setHonest(int honest) {
         this.honest = honest;
     }
+    private int getInnerTotalPower() {
+        return hardworking + right + honest;
+    }
+    public void innerCompareTo(Hufflepuff student) {
+        if (student.getInnerTotalPower() < this.getInnerTotalPower()) {
+            System.out.println("Сильнее " + this.getFullName());
+        } else if (student.getInnerTotalPower() > this.getInnerTotalPower()) {
+            System.out.println("Сильнее " + student.getFullName());
+        } else {
+            System.out.println("Ученики ранвны по силе");
+        }
+    }
+    @Override
+    public String toString(){
+        return super.toString() + " трудолюбивый: " + hardworking + " верный: " + right + " честный: " + honest;
+    }
 }

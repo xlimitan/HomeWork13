@@ -53,4 +53,20 @@ public class Slytherin extends Hogwarts{
     public void setPower(int power) {
         this.power = power;
     }
+    private int getInnerTotalPower() {
+        return tricky + resolute + ambitious + resourceful + power;
+    }
+    public void innerCompareTo(Slytherin student) {
+        if (student.getInnerTotalPower() < this.getInnerTotalPower()) {
+            System.out.println("Сильнее " + this.getFullName());
+        } else if (student.getInnerTotalPower() > this.getInnerTotalPower()) {
+            System.out.println("Сильнее " + student.getFullName());
+        } else {
+            System.out.println("Ученики ранвны по силе");
+        }
+    }
+    @Override
+    public String toString(){
+        return super.toString() + " хитрый: " + tricky + " решительный: " + resolute + " амбициозный: " + ambitious + " находчивый: " + resourceful + " сила: " + power;
+    }
 }

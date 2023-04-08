@@ -43,4 +43,20 @@ public class Ravenclaw extends Hogwarts {
     public void setCreative(int creative) {
         this.creative = creative;
     }
+    private int getInnerTotalPower() {
+        return smart + wise + witty + creative;
+    }
+    public void innerCompareTo(Ravenclaw student) {
+        if (student.getInnerTotalPower() < this.getInnerTotalPower()) {
+            System.out.println("Сильнее " + this.getFullName());
+        } else if (student.getInnerTotalPower() > this.getInnerTotalPower()) {
+            System.out.println("Сильнее " + student.getFullName());
+        } else {
+            System.out.println("Ученики ранвны по силе");
+        }
+    }
+    @Override
+    public String toString(){
+        return super.toString() + " умный: " + smart + " мудрый: " + wise + " остроумный: " + witty + " творческий: " + creative;
+    }
 }
